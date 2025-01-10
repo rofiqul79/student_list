@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="form-container">
-      <img class="mypic" src="images.png" alt="Profile Picture">
+      <img class="mypic" src="images.png" alt="images.png">
         <h4>Submit your Information</h4>
         <form action="https://formspree.io/f/mvggdzrp" method="POST">
             
@@ -26,7 +26,7 @@
                 
                 <label for="reg">Registration Number :</label>
                 <input type="number" id="reg" name="reg" placeholder="Enter registration number" required>
-                
+                <!-- Added Blood Group Section -->
                 <label for="blood-group">Blood Group :</label>
                 <select id="blood-group" name="blood-group" required>
                   <option value="" disabled selected>Select your blood group</option>
@@ -39,9 +39,8 @@
                   <option value="AB+">AB+</option>
                   <option value="AB-">AB-</option>
                 </select>
-                
-                <label for="dob">Date of Birth :</label>
-                <input inputmode="numeric" id="dob" name="dob" placeholder="DD-MM-YYYY" required>
+                <label for="dob">Date of birth :</label>
+                <input inputmode="numeric" id="dob" name="dob" placeholder="DD-MM-YYYY" required oninput="formatDob()">
                 
                 <label for="gender">Gender :</label>
                 <div class="gender-options">
@@ -85,7 +84,6 @@
                     <option value="Morning" selected>Morning</option>
                     <option value="Day">Day</option>
                 </select>
-
                 <label for="group">Group :</label>
                 <select name="group" id="group">
                   <option value="Select your group">Select your group</option>
@@ -94,14 +92,18 @@
                 </select>
                 
                 <label for="session">Session :</label>
-                <select id="session" name="session" required>
-                    <option value="" disabled selected>Select your session</option>
-                    <option value="2024-25">2024-25</option>
-                    <option value="2025-26">2025-26</option>
-                    <option value="2026-27">2026-27</option>
-                    <option value="2027-28">2027-28</option>
-                    <option value="2028-29">2028-29</option>
-                </select>
+                <div class="session-dropdown" ty>
+                    <select id="session" name="session" required>
+                        <option value="" disabled selected>Select your session</option>
+                        <option value="type-session">Type your session</option>
+                        <option value="2024-25">2024-25</option>
+                        <option value="2025-26">2025-26</option>
+                        <option value="2026-27">2026-27</option>
+                        <option value="2027-28">2027-28</option>
+                        <option value="202829">2028-29</option><!-- Special option to type session -->
+                    </select>
+                    <input type="number" id="custom-session" placeholder="Type your session here" />
+                </div>
             </fieldset>
 
             <!-- Contact Information Section -->
@@ -114,17 +116,16 @@
                 <label for="whatsapp">Whatsapp Number :</label>
                 <input type="tel" id="whatsapp" name="whatsapp" pattern="[0-9]{11}" placeholder="Your whatsapp number" required>             
 
-                <label for="guardian">Guardian's Phone Number :</label>
-                <input type="tel" id="guardian" name="guardian" pattern="[0-9]{11}" placeholder="Guardian's phone number" required>
+                <label for="gurdian">Gurdian's phone Number :</label>
+                <input type="tel" id="gurdian" name="gurdian" pattern="[0-9]{11}" placeholder="Gurdian's phone number" required>
                 
                 <label for="email">Email Address :</label>
                 <input type="email" id="email" name="email" placeholder="Enter your email" required>
                 
                 <label for="address">Permanent Address :</label>
                 <textarea id="address" name="address" rows="3" placeholder="Enter your address" required></textarea>
-
-                <label for="plan">What do you want:</label>
-                <textarea id="plan" name="plan" rows="3" placeholder="Describe your future plan."></textarea>
+                <label for="What do you want">What do you want</label>
+                <textarea name="" id="" cols="30" rows="3" placeholder="Describe your futer plan."></textarea>
             </fieldset>
             
             <!-- Submit Button -->
@@ -132,5 +133,5 @@
         </form>
     </div>
 </body>
-<script src="note.js"></script>
+<script src="note.js">note.js</script>
 </html>

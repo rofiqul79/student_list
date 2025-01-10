@@ -2,38 +2,45 @@
 const sessionSelect = document.getElementById('session');
 const customSessionInput = document.getElementById('custom-session');
 
+// Toggle dropdown and custom session input field
 sessionSelect.addEventListener('change', function() {
   if (sessionSelect.value === 'type-session') {
     customSessionInput.style.display = 'block'; // Show the input field for custom session
-    sessionSelect.style.display = 'none'; // Hide the dropdown
-    customSessionInput.focus(); // Focus on the input field to bring up the keyboard immediately
+    customSessionInput.focus(); // Focus on the input field
   } else {
     customSessionInput.style.display = 'none'; // Hide the input field
-    sessionSelect.style.display = 'block'; // Show the dropdown again
   }
 });
+
+// Student list icon and slide menu functionality
 const studentListIcon = document.getElementById('student-list-icon');
 const slideMenu = document.getElementById('slide-menu');
 const closeBtn = document.getElementById('close-btn');
 
+// Open slide menu
+studentListIcon.addEventListener('click', function() {
+  slideMenu.classList.add('open');
+});
 
+// Close slide menu
+closeBtn.addEventListener('click', function() {
+  slideMenu.classList.remove('open');
+});
 
 // Function to format DOB input (DD-MM-YYYY)
 function formatDob() {
-  var input = document.getElementById('dob');
-  var value = input.value;
+  const input = document.getElementById('dob');
+  let value = input.value;
 
   // Remove all non-numeric characters
   value = value.replace(/\D/g, '');
 
   // Format the value as DD-MM-YYYY
-  if (value.length >= 2) {
-    value = value.substring(0, 2) + '-' + value.substring(2);
-  }
-  if (value.length >= 5) {
-    value = value.substring(0, 5) + '-' + value.substring(5, 9);
+  if (value.length >= 3 && value.length <= 4) {
+    value = value.slice(0, 2) + '-' + value.slice(2);
+  } else if (value.length >= 5) {
+    value = value.slice(0, 2) + '-' + value.slice(2, 4) + '-' + value.slice(4, 8);
   }
 
-  // Set the formatted value back to the input field
   input.value = value;
 }

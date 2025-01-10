@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Information Form</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="node.css">
+</head>
+<body>
+</div>
+    <div class="form-container">
+      <img class="mypic" src="images.png" alt="images.png">
+        <h4>Submit your Information</h4>
+        <form action="https://formspree.io/f/mvggdzrp" method="POST">
+            
+            <!-- Personal Information Section -->
+            <fieldset>
+                <legend>Personal Information</legend>
+                
+                <label for="name">Full Name :</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                
+                <label for="roll">Roll Number :</label>
+                <input type="number" id="roll" name="roll" placeholder="Enter your roll number" required>
+                
+                <label for="reg">Registration Number :</label>
+                <input type="number" id="reg" name="reg" placeholder="Enter registration number" required>
+                <!-- Added Blood Group Section -->
+                <label for="blood-group">Blood Group :</label>
+                <select id="blood-group" name="blood-group" required>
+                  <option value="" disabled selected>Select your blood group</option>
+                  <option value="A+">A+</option>
+                  <option value="A-">A-</option>
+                  <option value="B+">B+</option>
+                  <option value="B-">B-</option>
+                  <option value="O+">O+</option>
+                  <option value="O-">O-</option>
+                  <option value="AB+">AB+</option>
+                  <option value="AB-">AB-</option>
+                </select>
+                <label for="dob">Date of birth :</label>
+                <input inputmode="numeric" id="dob" name="dob" placeholder="DD-MM-YYYY" required oninput="formatDob()">
+                
+                <label for="gender">Gender :</label>
+                <div class="gender-options">
+                    <label><input type="radio" id="male" name="gender" value="Male" required> Male</label>
+                    <label><input type="radio" id="female" name="gender" value="Female" required> Female</label>
+                    <label><input type="radio" id="other" name="gender" value="Other" required> Other</label>
+                </div>
+            </fieldset>
+
+            <!-- Academic Information Section -->
+            <fieldset>
+                <legend>Academic Information</legend>
+                
+                <label for="department">Department :</label>
+                <select id="department" name="department" required>
+                    <option value="" disabled selected>Select your department</option>
+                    <option value="Civil">Civil</option>
+                    <option value="Computer Science" selected>Computer Science</option>
+                    <option value="Electrical">Electrical</option>
+                    <option value="Mechanical">Mechanical</option>
+                    <option value="Power">Power</option>
+                    <option value="Electronics">Electronics</option>
+                    <option value="Electromedical">Electromedical</option>
+                </select>
+                
+                <label for="semester">Semester :</label>
+                <select id="semester" name="semester" required>
+                    <option value="" disabled selected>Select your semester</option>
+                    <option value="1st">1st</option>
+                    <option value="2nd">2nd</option>
+                    <option value="3rd" selected>3rd</option>
+                    <option value="4th">4th</option>
+                    <option value="5th">5th</option>
+                    <option value="6th">6th</option>
+                    <option value="7th">7th</option>
+                </select>
+
+                <label for="shift">Shift :</label>
+                <select id="shift" name="shift" required>
+                    <option value="" disabled selected>Select your shift</option>
+                    <option value="Morning" selected>Morning</option>
+                    <option value="Day">Day</option>
+                </select>
+                <label for="group">Group :</label>
+                <select name="group" id="group">
+                  <option value="Select your group">Select your group</option>
+                  <option value="A" selected>A</option>
+                  <option value="B">B</option>
+                </select>
+                
+                <label for="session">Session :</label>
+                <div class="session-dropdown" ty>
+                    <select id="session" name="session" required>
+                        <option value="" disabled selected>Select your session</option>
+                        <option value="type-session">Type your session</option>
+                        <option value="2024-25">2024-25</option>
+                        <option value="2025-26">2025-26</option>
+                        <option value="2026-27">2026-27</option>
+                        <option value="2027-28">2027-28</option>
+                        <option value="202829">2028-29</option><!-- Special option to type session -->
+                    </select>
+                    <input type="number" id="custom-session" placeholder="Type your session here" />
+                </div>
+            </fieldset>
+
+            <!-- Contact Information Section -->
+            <fieldset>
+                <legend>Contact Information</legend>
+                
+                <label for="phone">Phone Number :</label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{11}" placeholder="Enter your phone number" required>
+                
+                <label for="whatsapp">Whatsapp Number :</label>
+                <input type="tel" id="whatsapp" name="whatsapp" pattern="[0-9]{11}" placeholder="Your whatsapp number" required>             
+
+                <label for="gurdian">Gurdian's phone Number :</label>
+                <input type="tel" id="gurdian" name="gurdian" pattern="[0-9]{11}" placeholder="Gurdian's phone number" required>
+                
+                <label for="email">Email Address :</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                
+                <label for="address">Permanent Address :</label>
+                <textarea id="address" name="address" rows="3" placeholder="Enter your address" required></textarea>
+                <label for="What do you want">What do you want</label>
+                <textarea name="" id="" cols="30" rows="3" placeholder="Describe your futer plan."></textarea>
+            </fieldset>
+            
+            <!-- Submit Button -->
+            <button type="submit" class="btn-submit">Submit</button>
+        </form>
+    </div>
+</body>
+<script src="note.js">note.js</script>
+</html>

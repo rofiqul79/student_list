@@ -1,0 +1,352 @@
+body {
+    font-family: 'exodemibold', sans-serif;
+    background: linear-gradient(135deg, #E1E1E1, #747474);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    overflow-y: scroll;
+    
+}
+
+/* Form Container */
+.form-container {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    width: 100%;
+    max-width: 600px;
+    margin: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-container:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Heading */
+h4 {
+    text-align: center;
+    font-size: 1.4em;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 900;
+}
+.bac img{
+  height: 40px;
+  width: 40px;
+  background-size: cover;
+}
+
+/* Fieldset and Labels */
+fieldset {
+    border: none;
+    margin-bottom: 20px;
+}
+
+legend {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #444;
+    font-weight: bold;
+}
+
+label {
+    font-size: 0.95em;
+    color: #555;
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+/* Inputs, Selects, and Textareas */
+input, select, textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1em;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #6E8EF7;
+    box-shadow: 0 0 5px rgba(110, 142, 247, 0.5);
+    outline: none;
+}
+
+/* Gender Options */
+.gender-options {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.gender-options label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Submit Button */
+.btn-submit {
+    background: linear-gradient(135deg, #577AED, #7BA9F1);
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-align: center;
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-submit:hover {
+    background: linear-gradient(135deg, #5672D9, #90BAFF);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+/* ইনপুট ফিল্ডে টাইপ করা টেক্সটকে ক্যাপিটাল (uppercase) করবে */
+#name {
+  text-transform: uppercase; /* ইনপুটের ক্যাপিটালাইজেশন */
+}
+
+/* প্লেসহোল্ডারের জন্য ক্যাপিটালাইজেশন বন্ধ */
+#name::-webkit-input-placeholder {
+  text-transform: none; /* Chrome, Safari, Opera */
+}
+#name::-moz-placeholder {
+  text-transform: none; /* Firefox 19+ */
+}
+#name:-ms-input-placeholder {
+  text-transform: none; /* Internet Explorer 10+ */
+}
+#name::placeholder {
+  text-transform: none; /* Standard syntax */
+}
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: -5px;
+  position: relative;
+  margin-bottom: 13px;
+  transition: transform 0.3s ease;
+}
+
+.btn-text {
+  color: white;
+  font-family: 'exodemibold', sans-serif;
+  font-size: 17px;
+}
+
+.main-btn {
+  width: 290px;
+  height: 100px;
+  padding: 15px;
+  background-image: linear-gradient(to right, #0c5387, #618fac); 
+  color: white;
+  font-size: 25px;
+  border: 1.9px solid #ffd602;
+  border-radius: 35px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 2;
+  transition: transform 0.9s ease, height 0.9s ease;
+}
+
+.main-btn.clicked {
+  transform: scaleY(0.2);
+  border-radius: 28px;
+}
+
+.details {
+  width: 256px;
+  padding: 15px;
+  background-color: #ffd602;
+  color: black;
+  border: 2px solid #F8C506;
+  border-radius: 0px 0px 35px 35px;
+  position: relative;
+  margin-top: -40px;
+  z-index: 1;
+  overflow: hidden;
+  max-height: 20px;
+  transition: max-height 2s ease, transform 2s ease, border-radius 2s ease;
+}
+
+.details.open {
+  max-height: 600px;
+  transform: scaleY(1.03);
+  border-radius: 0 0 30px 30px;
+  transition: max-height 3s ease, transform 3s ease, border-radius 3s ease;
+}
+
+.arrow {
+  font-size: 16px;
+  color: #535660;
+  transition: opacity 0.9s ease, visibility 0.9s ease;
+  position: absolute;
+  margin-left: 43%;
+  display: block;
+  margin-top: 17px;
+}
+
+.details.open .arrow {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.details .text {
+  opacity: 0;
+  font-family: Arial, sans-serif;
+  font-weight: 450;
+  color: #171819;
+  transition: opacity 0.9s ease;
+  margin-top: 50px;
+}
+
+.details.open .text {
+  opacity: 1;
+}
+
+.button-container.shrink-up {
+  transform: translateY(-5px) scaleY(0.8); /* Shrink and move up */
+}
+
+.button-container.shrink-down {
+  transform: translateY(-70px) scaleY(0.8); /* Shrink and move down */
+}
+
+.button-container.shift-up {
+  transform: translateY(-60px);
+}
+
+.button-container.shift-down {
+  transform: translateY(70px);
+}
+
+.main-btn.expand {
+  animation: expand-contract 1s ease forwards;
+}
+
+@keyframes expand-contract {
+  0% {
+    height: 50px;
+  }
+  50% {
+    height: 85px;
+  }
+  100% {
+    height: 50px;
+  }
+}
+
+.deta {
+  text-align: center;
+  font-family: "exodemibold", sans-serif;
+  font-size: 19px;
+}
+
+.lis {
+  text-align: center;
+  font-family: "exodemibold", sans-serif;
+  margin-top: 20px;
+}
+/* Student List Icon */
+.student-list-icon {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 50%;
+    z-index: 1000;
+}
+
+.student-list-icon:hover {
+    background-color: #45a049;
+}
+
+/* Slide Menu */
+.slide-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;  /* Start with width 0 to hide it */
+    height: 100%;
+    background-color: white;
+    color: black;
+    transition: 0.5s;
+    padding-top: 60px;
+    z-index: 999;
+    overflow-x: hidden;  /* Prevent horizontal scrolling */
+}
+
+.slide-menu.open {
+    width: 100%; /* 100% width when open */
+}
+
+.slide-menu a {
+    padding: 8px 10px;
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
+    text-align: center;
+    display: block;
+}
+
+.slide-menu a:hover {
+    background-color: #333;
+    color: black;
+}
+
+/* Close button for slide menu */
+#close-btn {
+  font-size: 30px;
+  text-align: right;
+  padding: 20px;
+  color: black;
+  cursor: none;
+  background: white;
+  margin-top: -70px;
+}
+.session-dropdown {
+  display: flex;
+  flex-direction: column;
+}
+
+#custom-session {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1em;
+  margin-bottom: 15px;
+  width: 100%;
+  display: none; /* Hide custom session input initially */
+}
+
+.slid{
+  margin-bottom: 100px;
+}
+.mypic{
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  margin-left: 80px;
+}
